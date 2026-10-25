@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vale y sus creaciones | Manillas hechas con amor 💜</title>
+    <meta name="description" content="Manillas hechas a mano, personalizadas y llenas de color. Haz tu pedido por WhatsApp.">
+    <meta name="theme-color" content="#9b6fd8">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vale y sus creaciones | Manillas hechas con amor 💜">
+    <meta property="og:description" content="Manillas hechas a mano, personalizadas y llenas de color. Haz tu pedido por WhatsApp.">
+    <meta property="og:image" content="img/manilla-6.jpg">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Favicon (corazón morado en SVG, no necesita archivo) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💜%3C/text%3E%3C/svg%3E">
+
+    <!-- Fuentes (opcionales: si no hay internet se usan las del sistema) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           VARIABLES
+           ========================================================= */
+        :root {
+            --morado: #8a5cc9;
+            --morado-osc: #6a3fb0;
+            --lila: #c9b2f0;
+            --lila-claro: #efe6fd;
+            --lila-fondo: #f7f2ff;
+            --rosa: #f06ba8;
+            --rosa-claro: #ffe3f0;
+            --dorado: #f5c542;
+            --menta: #8fe0c9;
+            --blanco: #ffffff;
+            --texto: #3b2a57;
+            --texto-suave: #6e5d8a;
+            --verde-wa: #25d366;
+            --verde-wa-osc: #1da851;
+
+            --radio: 22px;
+            --radio-lg: 32px;
+            --sombra: 0 8px 24px rgba(106, 63, 176, .12);
+            --sombra-hover: 0 14px 34px rgba(106, 63, 176, .22);
+
+            --f-titulo: 'Fredoka', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+            --f-texto: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --f-mano: 'Caveat', 'Segoe Print', 'Chalkboard SE', 'Trebuchet MS', sans-serif;
+
+            --header-h: 68px;
+        }
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); }
+        body {
+            font-family: var(--f-texto);
+            color: var(--texto);
+            background: var(--lila-fondo);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(240,107,168,.08) 0, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(138,92,201,.10) 0, transparent 40%);
+            line-height: 1.55;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        button, input, textarea { font: inherit; color: inherit; }
+        button { cursor: pointer; border: none; background: none; }
+        a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; border-radius: 8px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .contenedor { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 18px; }
+        body.sin-scroll { overflow: hidden; }
+
+        /* Botones base */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 50px; padding: 12px 24px;
+            border-radius: 999px; font-weight: 800; font-size: 1rem;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+            text-align: center;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn:active { transform: translateY(0) scale(.98); }
+        .btn-morado { background: linear-gradient(135deg, var(--morado), var(--morado-osc)); color: #fff; box-shadow: 0 6px 16px rgba(106,63,176,.35); }
+        .btn-morado:hover { box-shadow: 0 10px 22px rgba(106,63,176,.45); }
+        .btn-wa { background: var(--verde-wa); color: #fff; box-shadow: 0 6px 16px rgba(37,211,102,.35); }
+        .btn-wa:hover { background: var(--verde-wa-osc); }
+        .btn-blanco { background: #fff; color: var(--morado-osc); box-shadow: var(--sombra); border: 2px solid var(--lila); }
+        .btn-blanco:hover { border-color: var(--morado); }
+        .btn-grande { min-height: 58px; padding: 16px 32px; font-size: 1.1rem; }
+
+        /* Título de sección */
+        .seccion { padding: 64px 0; position: relative; }
+        .seccion-titulo { text-align: center; margin-bottom: 36px; }
+        .seccion-titulo .etiqueta {
+            display: inline-block; font-family: var(--f-mano); font-size: 1.5rem;
+            color: var(--rosa); transform: rotate(-3deg);
+        }
+        .seccion-titulo h2 {
+            font-family: var(--f-titulo); font-size: clamp(1.8rem, 6vw, 2.6rem);
+            color: var(--morado-osc); line-height: 1.15;
+        }
+        .seccion-titulo p { color: var(--texto-suave); max-width: 560px; margin: 10px auto 0; }
+
+        /* Brochazo lila detrás de textos (como en el flyer) */
+        .brochazo {
+            background: linear-gradient(100deg, transparent 2%, var(--lila) 4%, var(--lila) 96%, transparent 98%);
+            padding: 2px 14px; border-radius: 12px 18px 10px 20px;
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+        .header {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255,255,255,.88);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--lila-claro);
+        }
+        .header .contenedor { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: 12px; }
+        .logo { display: flex; flex-direction: column; line-height: 1.05; }
+        .logo strong { font-family: var(--f-titulo); font-size: 1.2rem; color: var(--morado-osc); }
+        .logo span { font-family: var(--f-mano); font-size: 1.1rem; color: var(--rosa); }
+
+        .nav { display: none; }
+        .nav ul { list-style: none; display: flex; gap: 4px; }
+        .nav a { display: block; padding: 10px 14px; border-radius: 999px; font-weight: 700; color: var(--texto-suave); transition: background .2s, color .2s; }
+        .nav a:hover, .nav a.activo { background: var(--lila-claro); color: var(--morado-osc); }
+
+        .header-acciones { display: flex; align-items: center; gap: 8px; }
+        .header .btn-wa { display: none; min-height: 44px; padding: 8px 18px; font-size: .95rem; }
+
+        .btn-carrito {
+            position: relative; width: 46px; height: 46px; border-radius: 50%;
+            background: var(--lila-claro); font-size: 1.3rem;
+            display: grid; place-items: center; transition: transform .2s;
+        }
+        .btn-carrito:hover { transform: scale(1.08); }
+        .contador {
+            position: absolute; top: -4px; right: -4px;
+            min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
+            background: var(--rosa); color: #fff; font-size: .75rem; font-weight: 800;
+            display: grid; place-items: center; border: 2px solid #fff;
+        }
+        .contador.oculto { display: none; }
+        .contador.salto { animation: salto .45s ease; }
+
+        .hamburguesa { width: 46px; height: 46px; border-radius: 50%; background: var(--morado); display: grid; place-items: center; }
+        .hamburguesa span, .hamburguesa span::before, .hamburguesa span::after {
+            content: ''; display: block; width: 20px; height: 2.5px; background: #fff; border-radius: 3px;
+            position: relative; transition: transform .25s, background .25s;
+        }
+        .hamburguesa span::before { position: absolute; top: -6px; }
+        .hamburguesa span::after { position: absolute; top: 6px; }
+        .hamburguesa[aria-expanded="true"] span { background: transparent; }
+        .hamburguesa[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
+        .hamburguesa[aria-expanded="true"] span::after { transform: translateY(-6px) rotate(-45deg); }
+
+        /* Menú móvil desplegable */
+        .menu-movil {
+            position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 49;
+            background: #fff; border-radius: 0 0 var(--radio-lg) var(--radio-lg);
+            box-shadow: var(--sombra-hover); padding: 12px 18px 22px;
+            transform: translateY(-120%); transition: transform .3s ease; visibility: hidden;
+        }
+        .menu-movil.abierto { transform: translateY(0); visibility: visible; }
+        .menu-movil ul { list-style: none; }
+        .menu-movil a { display: block; padding: 14px 10px; font-weight: 800; font-size: 1.1rem; border-bottom: 1px dashed var(--lila); }
+        .menu-movil .btn { width: 100%; margin-top: 16px; }
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+        .hero { position: relative; overflow: hidden; padding: 48px 0 60px; text-align: center; }
+        .hero-fondo {
+            position: absolute; inset: 0; z-index: -1;
+            background:
+                radial-gradient(ellipse at 50% 0%, #fff 0, transparent 60%),
+                linear-gradient(180deg, var(--lila-claro), var(--lila-fondo));
+        }
+        .hero-marca {
+            font-family: var(--f-titulo); font-weight: 700; line-height: .95;
+            color: var(--morado); position: relative; display: inline-block; margin-bottom: 6px;
+        }
+        .hero-marca .vale {
+            display: block; font-size: clamp(4.2rem, 20vw, 7.5rem);
+            color: var(--lila); -webkit-text-stroke: 3px var(--morado-osc);
+            text-shadow: 5px 6px 0 var(--rosa-claro);
+            letter-spacing: -1px;
+        }
+        .hero-marca .corona { position: absolute; top: -10px; left: 50%; transform: translateX(-10%) rotate(10deg); font-size: 2rem; }
+        .hero-marca .sus { display: block; font-size: clamp(1.6rem, 7vw, 2.4rem); color: var(--texto); }
+        .hero h1 {
+            font-family: var(--f-mano); font-weight: 700;
+            font-size: clamp(1.9rem, 7.5vw, 2.8rem); color: var(--morado-osc);
+            margin: 18px 0 8px; line-height: 1.1;
+        }
+        .hero p.sub { font-size: 1.08rem; color: var(--texto-suave); max-width: 520px; margin: 0 auto 26px; }
+        .hero-botones { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto; }
+        .hero-valores {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 28px;
+        }
+        .chip {
+            background: #fff; border: 2px solid var(--lila-claro); border-radius: 999px;
+            padding: 6px 14px; font-weight: 700; font-size: .9rem; color: var(--morado-osc);
+        }
+
+        /* Decoraciones flotantes */
+        .deco { position: absolute; pointer-events: none; user-select: none; opacity: .85; animation: flotar 6s ease-in-out infinite; }
+        .deco svg { width: 100%; height: 100%; }
+
+        /* =========================================================
+           CATALOGO
+           ========================================================= */
+        .filtros {
+            display: flex; gap: 8px; overflow-x: auto; padding: 4px 4px 14px;
+            margin-bottom: 18px; scrollbar-width: none; justify-content: flex-start;
+        }
+        .filtros::-webkit-scrollbar { display: none; }
+        .filtro {
+            flex-shrink: 0; padding: 10px 20px; min-height: 44px; border-radius: 999px;
+            background: #fff; border: 2px solid var(--lila); font-weight: 800; color: var(--morado-osc);
+            transition: background .2s, color .2s, transform .2s;
+        }
+        .filtro:hover { transform: translateY(-2px); }
+        .filtro.activo { background: var(--morado); border-color: var(--morado); color: #fff; }
+
+        .grid-productos { display: grid; grid-template-columns: 1fr; gap: 22px; }
+
+        /* =========================================================
+           PRODUCTOS (tarjetas)
+           ========================================================= */
+        .tarjeta {
+            background: #fff; border-radius: var(--radio-lg); overflow: hidden;
+            box-shadow: var(--sombra); display: flex; flex-direction: column;
+            border: 3px solid #fff; outline: 2px dashed var(--lila-claro); outline-offset: -10px;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .tarjeta:hover { transform: translateY(-4px); box-shadow: var(--sombra-hover); }
+        .tarjeta-img { position: relative; aspect-ratio: 2 / 1.15; background: var(--lila-claro); overflow: hidden; }
+        .tarjeta-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+        .tarjeta:hover .tarjeta-img img { transform: scale(1.05); }
+        .badge-cat {
+            position: absolute; top: 12px; left: 12px;
+            background: rgba(255,255,255,.92); color: var(--morado-osc);
+            padding: 4px 12px; border-radius: 999px; font-size: .8rem; font-weight: 800;
+        }
+        .badge-cat.personalizadas { background: var(--rosa); color: #fff; }
+        .tarjeta-cuerpo { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+        .tarjeta h3 { font-family: var(--f-titulo); font-size: 1.25rem; color: var(--texto); line-height: 1.2; }
+        .tarjeta .desc { color: var(--texto-suave); font-size: .95rem; }
+        .precio-fila { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+        .precio {
+            font-family: var(--f-titulo); font-size: 1.6rem; font-weight: 700; color: #fff;
+            background: var(--morado); padding: 2px 18px; border-radius: 14px 20px 12px 22px;
+        }
+
+        /* Selector de cantidad */
+        .cantidad { display: inline-flex; align-items: center; background: var(--lila-claro); border-radius: 999px; padding: 3px; }
+        .cantidad button {
+            width: 38px; height: 38px; border-radius: 50%; background: #fff;
+            font-size: 1.2rem; font-weight: 800; color: var(--morado-osc);
+            display: grid; place-items: center; transition: background .2s;
+        }
+        .cantidad button:hover { background: var(--lila); }
+        .cantidad output, .cantidad span { min-width: 34px; text-align: center; font-weight: 800; }
+
+        /* Campo de personalización */
+        .campo-perso label { display: block; font-size: .85rem; font-weight: 800; color: var(--rosa); margin-bottom: 4px; }
+        .campo-perso input {
+            width: 100%; min-height: 46px; padding: 10px 14px; border-radius: 14px;
+            border: 2px dashed var(--rosa); background: var(--rosa-claro);
+            font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+        }
+        .campo-perso input::placeholder { letter-spacing: 0; text-transform: none; font-weight: 600; color: #b77a99; }
+        .campo-perso input.error { animation: temblor .35s; border-style: solid; }
+
+        .tarjeta-acciones { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+        .tarjeta-acciones .btn { min-height: 50px; padding: 10px 16px; }
+        .btn-wa-mini {
+            width: 50px; height: 50px; border-radius: 50%; background: var(--verde-wa);
+            display: grid; place-items: center; transition: transform .2s, background .2s;
+        }
+        .btn-wa-mini:hover { background: var(--verde-wa-osc); transform: scale(1.08); }
+        .btn-wa-mini svg { width: 26px; height: 26px; fill: #fff; }
+
+        .sin-resultados { text-align: center; color: var(--texto-suave); padding: 30px; grid-column: 1 / -1; }
+
+        /* =========================================================
+           CARRITO
+           ========================================================= */
+        .overlay {
+            position: fixed; inset: 0; background: rgba(59,42,87,.45); z-index: 90;
+            opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s;
+        }
+        .overlay.visible { opacity: 1; visibility: visible; }
+        .carrito {
+            position: fixed; top: 0; right: 0; bottom: 0; z-index: 100;
+            width: 100%; max-width: 440px; background: var(--lila-fondo);
+            display: flex; flex-direction: column;
+            transform: translateX(105%); transition: transform .35s cubic-bezier(.2,.8,.2,1);
+            box-shadow: -10px 0 30px rgba(59,42,87,.2);
+        }
+        .carrito.abierto { transform: translateX(0); }
+        .carrito-cabeza {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 18px; background: #fff; border-bottom: 2px dashed var(--lila);
+        }
+        .carrito-cabeza h2 { font-family: var(--f-titulo); color: var(--morado-osc); font-size: 1.5rem; }
+        .carrito-cabeza small { display: block; color: var(--texto-suave); font-weight: 700; }
+        .btn-cerrar { width: 44px; height: 44px; border-radius: 50%; background: var(--lila-claro); font-size: 1.4rem; font-weight: 800; color: var(--morado-osc); }
+        .carrito-cuerpo { flex: 1; overflow-y: auto; padding: 16px 18px; -webkit-overflow-scrolling: touch; }
+        .carrito-vacio { text-align: center; padding: 40px 10px; color: var(--texto-suave); }
+        .carrito-vacio .emoji { font-size: 3.4rem; display: block; margin-bottom: 8px; animation: flotar 4s ease-in-out infinite; }
+        .carrito-vacio .btn { margin-top: 18px; }
+
+        .item {
+            display: grid; grid-template-columns: 64px 1fr; gap: 12px;
+            background: #fff; border-radius: var(--radio); padding: 12px; margin-bottom: 10px;
+            box-shadow: 0 3px 10px rgba(106,63,176,.07); animation: entrar .3s ease;
+        }
+        .item img { width: 64px; height: 64px; object-fit: cover; border-radius: 14px; background: var(--lila-claro); }
+        .item-info h4 { font-size: .98rem; line-height: 1.25; font-weight: 800; }
+        .item-perso { display: inline-block; margin-top: 3px; background: var(--rosa-claro); color: #b0306c; font-weight: 800; font-size: .8rem; padding: 1px 10px; border-radius: 999px; letter-spacing: 1px; }
+        .item-fila { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; gap: 6px; flex-wrap: wrap; }
+        .item-fila .cantidad button { width: 32px; height: 32px; font-size: 1.05rem; }
+        .item-total { font-weight: 800; color: var(--morado-osc); }
+        .btn-eliminar { font-size: .82rem; font-weight: 800; color: #c0326f; padding: 6px 4px; text-decoration: underline; }
+
+        .datos-pedido { margin-top: 18px; background: #fff; border-radius: var(--radio); padding: 16px; }
+        .datos-pedido summary { cursor: pointer; font-weight: 800; color: var(--morado-osc); list-style: none; display: flex; justify-content: space-between; align-items: center; min-height: 32px; }
+        .datos-pedido summary::-webkit-details-marker { display: none; }
+        .datos-pedido summary::after { content: '＋'; font-size: 1.2rem; }
+        .datos-pedido[open] summary::after { content: '－'; }
+        .datos-pedido .nota { font-size: .85rem; color: var(--texto-suave); margin: 4px 0 10px; }
+        .campo { margin-bottom: 10px; }
+        .campo label { display: block; font-size: .85rem; font-weight: 800; margin-bottom: 3px; color: var(--texto-suave); }
+        .campo input, .campo textarea {
+            width: 100%; min-height: 46px; padding: 10px 14px; border-radius: 14px;
+            border: 2px solid var(--lila-claro); background: var(--lila-fondo); transition: border-color .2s;
+        }
+        .campo textarea { min-height: 76px; resize: vertical; }
+        .campo input:focus, .campo textarea:focus { border-color: var(--morado); outline: none; }
+
+        .carrito-pie { background: #fff; padding: 16px 18px calc(16px + env(safe-area-inset-bottom)); border-top: 2px dashed var(--lila); }
+        .total-fila { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+        .total-fila span { font-weight: 800; color: var(--texto-suave); }
+        .total-fila strong { font-family: var(--f-titulo); font-size: 1.8rem; color: var(--morado-osc); }
+        .carrito-pie .btn-wa { width: 100%; }
+        .btn-vaciar { display: block; margin: 10px auto 0; font-weight: 800; color: var(--texto-suave); font-size: .9rem; padding: 6px; text-decoration: underline; }
+        .carrito-pie.oculto { display: none; }
+
+        /* =========================================================
+           PERSONALIZADAS
+           ========================================================= */
+        .perso-caja {
+            background: linear-gradient(135deg, #fff 0%, var(--rosa-claro) 100%);
+            border-radius: var(--radio-lg); padding: 36px 22px; text-align: center;
+            box-shadow: var(--sombra); position: relative; overflow: hidden;
+        }
+        .ejemplos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 26px 0; }
+        .ejemplo {
+            display: inline-flex; gap: 4px; padding: 8px 12px; border-radius: 999px;
+            background: var(--c, var(--morado)); box-shadow: 0 4px 10px rgba(0,0,0,.08);
+            transition: transform .2s;
+        }
+        .ejemplo:hover { transform: translateY(-3px) rotate(-2deg); }
+        .ejemplo b {
+            width: 28px; height: 28px; border-radius: 50%; background: #fff;
+            display: grid; place-items: center; font-family: var(--f-titulo); font-size: .9rem; color: var(--texto);
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,.08);
+        }
+        .ejemplo b.esp { background: transparent; box-shadow: none; width: 8px; }
+        .probador { max-width: 420px; margin: 0 auto 22px; }
+        .probador input {
+            width: 100%; min-height: 54px; text-align: center; border-radius: 999px;
+            border: 2px dashed var(--rosa); background: #fff; padding: 10px 20px;
+            font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 1.1rem;
+        }
+        .probador input::placeholder { letter-spacing: 0; text-transform: none; font-weight: 600; font-size: 1rem; }
+        .vista-previa { min-height: 48px; margin-top: 14px; display: flex; justify-content: center; }
+
+        /* =========================================================
+           COMO PEDIR + SOBRE VALE
+           ========================================================= */
+        .pasos { display: grid; grid-template-columns: 1fr; gap: 16px; counter-reset: paso; margin-bottom: 30px; }
+        .paso {
+            background: #fff; border-radius: var(--radio); padding: 20px; box-shadow: var(--sombra);
+            display: flex; gap: 16px; align-items: center;
+        }
+        .paso-num {
+            flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+            display: grid; place-items: center; font-family: var(--f-titulo); font-size: 1.5rem; font-weight: 700; color: #fff;
+            background: var(--c);
+        }
+        .paso h3 { font-family: var(--f-titulo); color: var(--morado-osc); font-size: 1.2rem; }
+        .paso p { color: var(--texto-suave); font-size: .95rem; }
+        .centro { text-align: center; }
+
+        .sobre { background: #fff; }
+        .sobre-texto { max-width: 620px; margin: 0 auto 30px; text-align: center; font-size: 1.08rem; color: var(--texto-suave); }
+        .valores { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .valor { text-align: center; padding: 20px 10px; border-radius: var(--radio); background: var(--lila-fondo); }
+        .valor .icono {
+            width: 66px; height: 66px; margin: 0 auto 10px; border-radius: 50%;
+            display: grid; place-items: center; font-size: 1.8rem; background: var(--c);
+        }
+        .valor strong { font-family: var(--f-titulo); color: var(--texto); font-size: 1.05rem; }
+
+        /* =========================================================
+           CONTACTO
+           ========================================================= */
+        .contacto-caja {
+            background: linear-gradient(135deg, var(--morado) 0%, var(--morado-osc) 100%);
+            border-radius: var(--radio-lg); padding: 44px 22px; text-align: center; color: #fff;
+            position: relative; overflow: hidden; box-shadow: var(--sombra-hover);
+        }
+        .contacto-caja h2 { font-family: var(--f-titulo); font-size: clamp(1.9rem, 7vw, 2.6rem); }
+        .contacto-caja p { opacity: .95; font-size: 1.1rem; }
+        .numero {
+            display: inline-block; margin: 20px 0 24px; background: #fff; color: var(--texto);
+            font-family: var(--f-titulo); font-weight: 700; font-size: clamp(1.7rem, 8vw, 2.4rem);
+            padding: 6px 26px; border-radius: 18px 26px 16px 24px; transform: rotate(-2deg);
+        }
+        .contacto-caja .btn-wa { width: 100%; max-width: 360px; }
+        .talento { font-family: var(--f-mano); font-size: 1.7rem; margin-top: 22px; }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+        .footer { padding: 30px 0 100px; text-align: center; color: var(--texto-suave); font-size: .92rem; }
+        .footer strong { font-family: var(--f-titulo); color: var(--morado-osc); font-size: 1.1rem; display: block; }
+
+        /* Botón flotante WhatsApp */
+        .wa-flotante {
+            position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 80;
+            display: flex; align-items: center; gap: 8px;
+            background: var(--verde-wa); color: #fff; border-radius: 999px;
+            height: 60px; min-width: 60px; padding: 0 16px; justify-content: center;
+            box-shadow: 0 8px 20px rgba(37,211,102,.45); font-weight: 800;
+            animation: pulso 2.4s infinite;
+        }
+        .wa-flotante svg { width: 30px; height: 30px; fill: #fff; flex-shrink: 0; }
+        .wa-flotante span { display: none; }
+
+        /* Toast */
+        .toast {
+            position: fixed; left: 50%; bottom: 96px; z-index: 120;
+            transform: translate(-50%, 30px); opacity: 0; pointer-events: none;
+            background: var(--texto); color: #fff; padding: 12px 20px; border-radius: 999px;
+            font-weight: 700; box-shadow: var(--sombra-hover); transition: all .3s ease;
+            display: flex; gap: 10px; align-items: center; max-width: calc(100% - 32px);
+        }
+        .toast.visible { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+        .toast button { color: var(--dorado); font-weight: 800; text-decoration: underline; white-space: nowrap; }
+
+        /* =========================================================
+           RESPONSIVE (mobile first)
+           ========================================================= */
+        @media (min-width: 600px) {
+            .grid-productos { grid-template-columns: repeat(2, 1fr); }
+            .hero-botones { flex-direction: row; max-width: none; justify-content: center; }
+            .pasos { grid-template-columns: repeat(2, 1fr); }
+            .wa-flotante span { display: inline; }
+            .wa-flotante { padding: 0 22px 0 16px; }
+            .filtros { justify-content: center; }
+        }
+        @media (min-width: 900px) {
+            .nav { display: block; }
+            .hamburguesa { display: none; }
+            .menu-movil { display: none; }
+            .header .btn-wa { display: inline-flex; }
+            .grid-productos { grid-template-columns: repeat(3, 1fr); }
+            .pasos { grid-template-columns: repeat(4, 1fr); }
+            .paso { flex-direction: column; text-align: center; }
+            .valores { grid-template-columns: repeat(4, 1fr); }
+            .seccion { padding: 84px 0; }
+            .hero { padding: 70px 0 84px; }
+            .perso-caja, .contacto-caja { padding: 56px 40px; }
+        }
+        @media (min-width: 1200px) {
+            .grid-productos { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* =========================================================
+           ANIMACIONES
+           ========================================================= */
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(6deg); }
+        }
+        @keyframes brillo {
+            0%, 100% { opacity: .3; transform: scale(.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        @keyframes pulso {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,.55), 0 8px 20px rgba(37,211,102,.45); }
+            70% { box-shadow: 0 0 0 16px rgba(37,211,102,0), 0 8px 20px rgba(37,211,102,.45); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 8px 20px rgba(37,211,102,.45); }
+        }
+        @keyframes salto { 0%,100% { transform: scale(1); } 40% { transform: scale(1.4); } }
+        @keyframes entrar { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        @keyframes temblor { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+        .deco.brilla { animation: brillo 3s ease-in-out infinite; }
+
+        /* Aparición al hacer scroll */
+        .revelar { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+        .revelar.visible { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .revelar { opacity: 1; transform: none; }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Iconos SVG reutilizables -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.74A13 13 0 0 0 16.04 29C23.2 29 29 23.17 29 16S23.2 3 16.04 3Zm0 23.7c-1.95 0-3.86-.52-5.53-1.52l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.66 10.66 0 0 1 5.33 16c0-5.9 4.8-10.7 10.71-10.7 5.9 0 10.65 4.8 10.65 10.7s-4.76 10.7-10.65 10.7Zm5.86-8c-.32-.16-1.9-.94-2.2-1.04-.29-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.7.08-.32-.16-1.35-.5-2.58-1.6-.95-.85-1.6-1.9-1.79-2.22-.18-.32-.02-.5.14-.65.15-.15.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/></symbol>
+        <symbol id="i-mariposa" viewBox="0 0 64 64"><g fill="#c9b2f0" stroke="#6a3fb0" stroke-width="2.5" stroke-linejoin="round"><path d="M31 30C24 14 6 8 6 20c0 9 10 13 25 12Z"/><path d="M33 30c7-16 25-22 25-10 0 9-10 13-25 12Z"/><path d="M31 34c-12 0-20 6-17 13 3 6 12 2 17-11Z"/><path d="M33 34c12 0 20 6 17 13-3 6-12 2-17-11Z"/></g><path d="M32 22v26" stroke="#6a3fb0" stroke-width="3" stroke-linecap="round"/><path d="M32 22c-2-5-5-8-8-9M32 22c2-5 5-8 8-9" stroke="#6a3fb0" stroke-width="2" fill="none" stroke-linecap="round"/></symbol>
+        <symbol id="i-corazon" viewBox="0 0 64 64"><path d="M32 54S8 40 8 23c0-8 6-13 12-13 5 0 9 3 12 8 3-5 7-8 12-8 6 0 12 5 12 13 0 17-24 31-24 31Z" fill="none" stroke="#6a3fb0" stroke-width="4" stroke-linejoin="round"/></symbol>
+        <symbol id="i-estrella" viewBox="0 0 64 64"><path d="M32 6l7 17 18 2-14 12 4 18-15-9-15 9 4-18L7 25l18-2Z" fill="#c9b2f0" stroke="#8a5cc9" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+        <symbol id="i-brillo" viewBox="0 0 64 64"><path d="M32 4c2 16 12 26 28 28-16 2-26 12-28 28-2-16-12-26-28-28C20 30 30 20 32 4Z" fill="#f5c542"/></symbol>
+    </svg>
+
+    <a href="#catalogo" class="sr-only">Saltar al catálogo</a>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="contenedor">
+            <a href="#inicio" class="logo" aria-label="Vale y sus creaciones, ir al inicio">
+                <strong>💜 Vale y sus creaciones</strong>
+                <span>Manillas hechas con amor ✨</span>
+            </a>
+
+            <nav class="nav" aria-label="Menú principal">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#personalizadas">Personalizadas</a></li>
+                    <li><a href="#como-pedir">¿Cómo pedir?</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-acciones">
+                <a class="btn btn-wa js-wa-general" href="https://wa.me/573234281390" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
+                <button class="btn-carrito" id="abrirCarrito" aria-label="Abrir mi pedido" aria-controls="carrito">
+                    🛍️<span class="contador oculto" id="contador" aria-live="polite">0</span>
+                </button>
+                <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil"><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú móvil -->
+    <div class="menu-movil" id="menuMovil">
+        <ul>
+            <li><a href="#inicio">🏠 Inicio</a></li>
+            <li><a href="#catalogo">🛍️ Catálogo</a></li>
+            <li><a href="#personalizadas">✨ Personalizadas</a></li>
+            <li><a href="#como-pedir">📝 ¿Cómo pedir?</a></li>
+            <li><a href="#contacto">💬 Contacto</a></li>
+        </ul>
+        <a class="btn btn-wa js-wa-general" href="https://wa.me/573234281390" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
+    </div>
+
+    <main>
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="inicio">
+            <div class="hero-fondo"></div>
+
+            <!-- decoraciones -->
+            <svg class="deco" style="top:8%;left:4%;width:64px;height:64px" aria-hidden="true"><use href="#i-mariposa"/></svg>
+            <svg class="deco" style="top:12%;right:6%;width:40px;height:40px;animation-delay:-2s" aria-hidden="true"><use href="#i-corazon"/></svg>
+            <svg class="deco brilla" style="top:40%;left:8%;width:26px;height:26px" aria-hidden="true"><use href="#i-brillo"/></svg>
+            <svg class="deco" style="bottom:14%;right:5%;width:56px;height:56px;animation-delay:-3s" aria-hidden="true"><use href="#i-mariposa"/></svg>
+            <svg class="deco" style="bottom:22%;left:5%;width:34px;height:34px;animation-delay:-1s" aria-hidden="true"><use href="#i-estrella"/></svg>
+            <svg class="deco brilla" style="top:30%;right:14%;width:22px;height:22px;animation-delay:-1.5s" aria-hidden="true"><use href="#i-brillo"/></svg>
+            <svg class="deco" style="bottom:6%;left:44%;width:30px;height:30px;animation-delay:-4s" aria-hidden="true"><use href="#i-corazon"/></svg>
+
+            <div class="contenedor">
+                <div class="hero-marca" aria-hidden="true">
+                    <span class="corona">👑</span>
+                    <span class="vale">Vale</span>
+                    <span class="sus">y sus creaciones</span>
+                </div>
+                <h1>Pequeños detalles, grandes historias 💜</h1>
+                <p class="sub">Manillas hechas a mano para regalar, compartir y llenar tus días de color.</p>
+                <div class="hero-botones">
+                    <a href="#catalogo" class="btn btn-morado btn-grande">🛍️ Ver catálogo</a>
+                    <a href="https://wa.me/573234281390" class="btn btn-blanco btn-grande js-wa-general" target="_blank" rel="noopener">💬 Hacer pedido</a>
+                </div>
+                <div class="hero-valores">
+                    <span class="chip">♥ Hechas con amor</span>
+                    <span class="chip">♥ Colores únicos</span>
+                    <span class="chip">♥ Diseños para todos los gustos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CATALOGO ================= -->
+        <section class="seccion" id="catalogo">
+            <div class="contenedor">
+                <div class="seccion-titulo">
+                    <span class="etiqueta">Manillas que te hacen brillar ✨</span>
+                    <h2>Nuestro catálogo</h2>
+                    <p>Elige tus favoritas, escoge la cantidad y agrégalas a tu pedido.</p>
+                </div>
+
+                <div class="filtros" role="tablist" aria-label="Filtrar por categoría" id="filtros"></div>
+                <div class="grid-productos" id="gridProductos" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- ================= PERSONALIZADAS ================= -->
+        <section class="seccion" id="personalizadas">
+            <div class="contenedor">
+                <div class="perso-caja revelar">
+                    <svg class="deco" style="top:16px;right:16px;width:50px;height:50px" aria-hidden="true"><use href="#i-mariposa"/></svg>
+                    <svg class="deco brilla" style="bottom:20px;left:18px;width:26px;height:26px" aria-hidden="true"><use href="#i-brillo"/></svg>
+                    <div class="seccion-titulo" style="margin-bottom:0">
+                        <span class="etiqueta">con tu nombre</span>
+                        <h2>Hazla única 💜</h2>
+                        <p>¿Quieres una manilla con tu nombre, una palabra especial o un mensaje? Podemos crearla especialmente para ti.</p>
+                    </div>
+
+                    <div class="ejemplos" id="ejemplos" aria-label="Ejemplos de palabras"></div>
+
+                    <div class="probador">
+                        <label for="probador" class="sr-only">Escribe tu palabra para ver cómo queda</label>
+                        <input id="probador" type="text" maxlength="14" placeholder="Escribe tu palabra y mira cómo queda 👀" autocomplete="off">
+                        <div class="vista-previa" id="vistaPrevia"></div>
+                    </div>
+
+                    <a href="https://wa.me/573234281390" class="btn btn-morado btn-grande" id="btnPersonalizar" target="_blank" rel="noopener">✨ Quiero personalizar la mía</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= COMO PEDIR ================= -->
+        <section class="seccion" id="como-pedir">
+            <div class="contenedor">
+                <div class="seccion-titulo">
+                    <span class="etiqueta">¡es muy fácil!</span>
+                    <h2>¿Cómo pedir?</h2>
+                </div>
+                <div class="pasos">
+                    <div class="paso revelar"><div class="paso-num" style="--c:var(--morado)">1</div><div><h3>Elige</h3><p>Escoge tus manillas favoritas.</p></div></div>
+                    <div class="paso revelar"><div class="paso-num" style="--c:var(--rosa)">2</div><div><h3>Personaliza</h3><p>Si quieres, agrega un nombre o palabra especial.</p></div></div>
+                    <div class="paso revelar"><div class="paso-num" style="--c:#e0a800">3</div><div><h3>Haz tu pedido</h3><p>Agrega tus productos al carrito.</p></div></div>
+                    <div class="paso revelar"><div class="paso-num" style="--c:var(--verde-wa-osc)">4</div><div><h3>Escríbenos</h3><p>Enviamos tu pedido directamente a WhatsApp.</p></div></div>
+                </div>
+                <div class="centro">
+                    <button class="btn btn-wa btn-grande" id="btnPedirPasos">💜 Pedir por WhatsApp</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SOBRE VALE ================= -->
+        <section class="seccion sobre" id="sobre">
+            <div class="contenedor">
+                <div class="seccion-titulo">
+                    <span class="etiqueta">sobre Vale</span>
+                    <h2>Hechas con amor 💜</h2>
+                </div>
+                <p class="sobre-texto revelar">Cada manilla es creada con dedicación, creatividad y mucho amor. Vale convierte pequeños detalles en accesorios llenos de color y personalidad.</p>
+                <div class="valores">
+                    <div class="valor revelar"><div class="icono" style="--c:var(--lila)">❤️</div><strong>Hechas con amor</strong></div>
+                    <div class="valor revelar"><div class="icono" style="--c:var(--lila)">💎</div><strong>Excelente calidad</strong></div>
+                    <div class="valor revelar"><div class="icono" style="--c:#ffe9a6">⭐</div><strong>Diseños únicos</strong></div>
+                    <div class="valor revelar"><div class="icono" style="--c:#c7f3e5">🎁</div><strong>Perfectas para regalar</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <section class="seccion" id="contacto">
+            <div class="contenedor">
+                <div class="contacto-caja revelar">
+                    <svg class="deco" style="top:18px;left:18px;width:46px;height:46px;opacity:.6" aria-hidden="true"><use href="#i-mariposa"/></svg>
+                    <svg class="deco brilla" style="top:26px;right:30px;width:28px;height:28px" aria-hidden="true"><use href="#i-brillo"/></svg>
+                    <h2>¿Te gustó alguna?</h2>
+                    <p>Escríbenos por WhatsApp y haz tu pedido 💜</p>
+                    <a class="numero js-wa-general" href="https://wa.me/573234281390" target="_blank" rel="noopener" aria-label="WhatsApp 323 428 1390">323 428 1390</a><br>
+                    <a class="btn btn-wa btn-grande js-wa-general" href="https://wa.me/573234281390" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
+                    <p class="talento">¡Apoya el talento local! 🦋</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="contenedor">
+            <strong>💜 Vale y sus creaciones</strong>
+            Pequeños detalles, grandes historias · © <span id="anio"></span>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a class="wa-flotante js-wa-general" href="https://wa.me/573234281390" target="_blank" rel="noopener" aria-label="Haz tu pedido por WhatsApp">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg><span>Haz tu pedido</span>
+    </a>
+
+    <!-- ================= CARRITO ================= -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="carrito" id="carrito" role="dialog" aria-modal="true" aria-labelledby="tituloCarrito" aria-hidden="true">
+        <div class="carrito-cabeza">
+            <div>
+                <h2 id="tituloCarrito">Mi pedido 💜</h2>
+                <small id="resumenCantidad">0 productos</small>
+            </div>
+            <button class="btn-cerrar" id="cerrarCarrito" aria-label="Cerrar mi pedido">×</button>
+        </div>
+
+        <div class="carrito-cuerpo">
+            <div id="listaCarrito"></div>
+
+            <details class="datos-pedido" id="datosPedido">
+                <summary>📝 Tus datos (opcional)</summary>
+                <p class="nota">Así Vale sabe a quién y a dónde enviar tu pedido.</p>
+                <div class="campo"><label for="dNombre">Nombre</label><input id="dNombre" type="text" autocomplete="name" placeholder="¿Cómo te llamas?"></div>
+                <div class="campo"><label for="dCiudad">Ciudad</label><input id="dCiudad" type="text" autocomplete="address-level2" placeholder="Ej: Pereira"></div>
+                <div class="campo"><label for="dComentario">Comentario</label><textarea id="dComentario" placeholder="Colores preferidos, fecha de entrega, si es un regalo..."></textarea></div>
+            </details>
+        </div>
+
+        <div class="carrito-pie" id="carritoPie">
+            <div class="total-fila"><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+            <button class="btn btn-wa btn-grande" id="enviarPedido">💬 Enviar pedido por WhatsApp</button>
+            <button class="btn-vaciar" id="vaciarCarrito">Vaciar pedido</button>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+    /* =============================================================
+       DATOS DE PRODUCTOS
+       👉 Para agregar, quitar o cambiar manillas, edita SOLO este array.
+       - categoria: "tejidas" | "nylon" | "pepitas" | "personalizadas"
+       - personalizable: true muestra el campo para escribir el nombre
+       - imagen: ruta de la foto (si no existe se muestra un dibujo bonito)
+       ============================================================= */
+    const productos = [
+        { id: 1, nombre: "Manilla con pepitas de abrir y cerrar", precio: 4000, categoria: "pepitas",        imagen: "img/manilla-1.jpg", descripcion: "Manilla con pepitas de colores y sistema de abrir y cerrar." },
+        { id: 2, nombre: "Manilla tejida",                        precio: 5000, categoria: "tejidas",        imagen: "img/manilla-2.jpg", descripcion: "Manilla tejida a mano, disponible en diferentes colores." },
+        { id: 3, nombre: "Manilla tejida con pepitas",            precio: 5200, categoria: "tejidas",        imagen: "img/manilla-3.jpg", descripcion: "Combinación de tejido y pepitas para un diseño único." },
+        { id: 4, nombre: "Manilla de nylon sencilla",             precio: 3000, categoria: "nylon",          imagen: "img/manilla-4.jpg", descripcion: "Manilla sencilla, liviana y colorida." },
+        { id: 5, nombre: "Manilla de nylon con dije",             precio: 3200, categoria: "nylon",          imagen: "img/manilla-5.jpg", descripcion: "Manilla de nylon con un lindo dije decorativo." },
+        { id: 6, nombre: "Manilla de nylon personalizada",        precio: 3500, categoria: "personalizadas", imagen: "img/manilla-6.jpg", descripcion: "Personalízala con palabras, nombres o mensajes especiales.", personalizable: true },
+        { id: 7, nombre: "Manilla tejida personalizada",          precio: 5500, categoria: "personalizadas", imagen: "img/manilla-7.jpg", descripcion: "Manilla tejida personalizada con el nombre que quieras.", personalizable: true },
+        { id: 8, nombre: "Manilla personalizada con pepitas",     precio: 4300, categoria: "personalizadas", imagen: "img/manilla-8.jpg", descripcion: "Manilla con pepitas de abrir y cerrar personalizada.", personalizable: true },
+        { id: 9, nombre: "Manilla de nylon con todo",             precio: 3500, categoria: "nylon",          imagen: "img/manilla-9.jpg", descripcion: "Manilla de nylon decorada con diferentes elementos." }
+    ];
+
+    /* Configuración general */
+    const CONFIG = {
+        whatsapp: "573234281390",
+        claveStorage: "vale-pedido-v1"
+    };
+
+    const CATEGORIAS = [
+        { id: "todos",          nombre: "Todos ✨" },
+        { id: "tejidas",        nombre: "Tejidas" },
+        { id: "nylon",          nombre: "Nylon" },
+        { id: "pepitas",        nombre: "Pepitas" },
+        { id: "personalizadas", nombre: "Personalizadas 💜" }
+    ];
+
+    /* ---------- Utilidades ---------- */
+    const $ = (sel) => document.querySelector(sel);
+
+    // Formato colombiano: $4.000
+    const formatoCOP = (valor) => "$" + Math.round(valor).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    const escaparHTML = (txt) => String(txt).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    const nombreCategoria = (id) => (CATEGORIAS.find((c) => c.id === id) || { nombre: id }).nombre.replace(/[✨💜]/g, "").trim();
+
+    // Placeholder bonito (SVG) para cuando una imagen no existe
+    const PLACEHOLDER = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230">
+            <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3ebff"/><stop offset="1" stop-color="#ffe3f0"/></linearGradient></defs>
+            <rect width="400" height="230" fill="url(#g)"/>
+            <ellipse cx="200" cy="115" rx="110" ry="44" fill="none" stroke="#c9b2f0" stroke-width="10"/>
+            <g fill="#8a5cc9"><circle cx="90" cy="115" r="12"/><circle cx="310" cy="115" r="12"/></g>
+            <g fill="#f06ba8"><circle cx="130" cy="80" r="10"/><circle cx="270" cy="150" r="10"/></g>
+            <g fill="#f5c542"><circle cx="200" cy="71" r="10"/><circle cx="200" cy="159" r="10"/></g>
+            <g fill="#8fe0c9"><circle cx="270" cy="80" r="10"/><circle cx="130" cy="150" r="10"/></g>
+            <text x="200" y="124" font-family="sans-serif" font-size="26" text-anchor="middle">💜</text>
+            <text x="200" y="212" font-family="sans-serif" font-size="15" font-weight="bold" fill="#6a3fb0" text-anchor="middle">Foto próximamente ✨</text>
+        </svg>`);
+
+    // Se usa en onerror de cada <img>: evita que una imagen rota dañe el diseño
+    function imagenFallback(img) {
+        img.onerror = null;
+        img.src = PLACEHOLDER;
+    }
+
+    /* =============================================================
+       CARRITO
+       Cada línea: { clave, id, cantidad, personalizacion }
+       La clave une id + texto personalizado, así "LUZ" y "AMOR"
+       quedan como líneas separadas.
+       ============================================================= */
+    let carrito = [];
+
+    const buscarProducto = (id) => productos.find((p) => p.id === id);
+
+    function agregarAlCarrito(id, cantidad = 1, personalizacion = "") {
+        const perso = personalizacion.trim().toUpperCase();
+        const clave = id + "|" + perso;
+        const existente = carrito.find((l) => l.clave === clave);
+        if (existente) existente.cantidad += cantidad;
+        else carrito.push({ clave, id, cantidad, personalizacion: perso });
+        guardarCarrito();
+        renderCarrito();
+        animarContador();
+    }
+
+    function cambiarCantidad(clave, delta) {
+        const linea = carrito.find((l) => l.clave === clave);
+        if (!linea) return;
+        linea.cantidad += delta;
+        if (linea.cantidad <= 0) carrito = carrito.filter((l) => l.clave !== clave);
+        guardarCarrito();
+        renderCarrito();
+    }
+
+    function eliminarLinea(clave) {
+        carrito = carrito.filter((l) => l.clave !== clave);
+        guardarCarrito();
+        renderCarrito();
+    }
+
+    function vaciarCarrito() {
+        if (!carrito.length) return;
+        if (!confirm("¿Seguro que quieres vaciar tu pedido?")) return;
+        carrito = [];
+        guardarCarrito();
+        renderCarrito();
+    }
+
+    const totalUnidades = () => carrito.reduce((s, l) => s + l.cantidad, 0);
+    const totalPrecio = () => carrito.reduce((s, l) => {
+        const p = buscarProducto(l.id);
+        return s + (p ? p.precio * l.cantidad : 0);
+    }, 0);
+
+    function renderCarrito() {
+        // Quitar líneas de productos que ya no existan en el array
+        carrito = carrito.filter((l) => buscarProducto(l.id));
+
+        const lista = $("#listaCarrito");
+        const unidades = totalUnidades();
+
+        // Contador del header
+        const contador = $("#contador");
+        contador.textContent = unidades;
+        contador.classList.toggle("oculto", unidades === 0);
+        $("#abrirCarrito").setAttribute("aria-label", `Abrir mi pedido (${unidades} productos)`);
+        $("#resumenCantidad").textContent = unidades === 1 ? "1 producto" : `${unidades} productos`;
+
+        $("#carritoPie").classList.toggle("oculto", unidades === 0);
+        $("#datosPedido").style.display = unidades === 0 ? "none" : "";
+
+        if (unidades === 0) {
+            lista.innerHTML = `
+                <div class="carrito-vacio">
+                    <span class="emoji">🦋</span>
+                    <p><strong>Tu pedido está vacío</strong></p>
+                    <p>Agrega tus manillas favoritas desde el catálogo.</p>
+                    <button class="btn btn-morado" data-accion="ir-catalogo">🛍️ Ver catálogo</button>
+                </div>`;
+            return;
+        }
+
+        lista.innerHTML = carrito.map((l) => {
+            const p = buscarProducto(l.id);
+            return `
+            <div class="item">
+                <img src="${p.imagen}" alt="${escaparHTML(p.nombre)}" onerror="imagenFallback(this)">
+                <div class="item-info">
+                    <h4>${escaparHTML(p.nombre)}</h4>
+                    ${l.personalizacion ? `<span class="item-perso">“${escaparHTML(l.personalizacion)}”</span>` : ""}
+                    <div class="item-fila">
+                        <div class="cantidad">
+                            <button data-accion="menos" data-clave="${escaparHTML(l.clave)}" aria-label="Quitar una">−</button>
+                            <span aria-label="Cantidad">${l.cantidad}</span>
+                            <button data-accion="mas" data-clave="${escaparHTML(l.clave)}" aria-label="Agregar una">+</button>
+                        </div>
+                        <span class="item-total">${formatoCOP(p.precio * l.cantidad)}</span>
+                    </div>
+                    <button class="btn-eliminar" data-accion="eliminar" data-clave="${escaparHTML(l.clave)}">Eliminar</button>
+                </div>
+            </div>`;
+        }).join("");
+
+        $("#subtotal").textContent = formatoCOP(totalPrecio());
+    }
+
+    function animarContador() {
+        const c = $("#contador");
+        c.classList.remove("salto");
+        void c.offsetWidth; // reinicia la animación
+        c.classList.add("salto");
+    }
+
+    /* Abrir / cerrar panel del carrito */
+    let ultimoFoco = null;
+    function abrirCarrito() {
+        ultimoFoco = document.activeElement;
+        $("#carrito").classList.add("abierto");
+        $("#carrito").setAttribute("aria-hidden", "false");
+        $("#overlay").classList.add("visible");
+        document.body.classList.add("sin-scroll");
+        cerrarMenu();
+        $("#toast").classList.remove("visible");
+        setTimeout(() => $("#cerrarCarrito").focus(), 50);
+    }
+    function cerrarCarrito() {
+        $("#carrito").classList.remove("abierto");
+        $("#carrito").setAttribute("aria-hidden", "true");
+        $("#overlay").classList.remove("visible");
+        document.body.classList.remove("sin-scroll");
+        if (ultimoFoco) ultimoFoco.focus();
+    }
+
+    /* =============================================================
+       FILTROS + CATÁLOGO
+       ============================================================= */
+    let filtroActual = "todos";
+
+    function renderFiltros() {
+        $("#filtros").innerHTML = CATEGORIAS.map((c) => `
+            <button class="filtro ${c.id === filtroActual ? "activo" : ""}" role="tab"
+                aria-selected="${c.id === filtroActual}" data-filtro="${c.id}">${c.nombre}</button>`).join("");
+    }
+
+    function renderProductos() {
+        const lista = filtroActual === "todos" ? productos : productos.filter((p) => p.categoria === filtroActual);
+        const grid = $("#gridProductos");
+
+        if (!lista.length) {
+            grid.innerHTML = `<p class="sin-resultados">Muy pronto habrá manillas en esta categoría 💜</p>`;
+            return;
+        }
+
+        grid.innerHTML = lista.map((p) => {
+            const esPerso = p.personalizable || p.categoria === "personalizadas";
+            return `
+            <article class="tarjeta revelar" data-id="${p.id}">
+                <div class="tarjeta-img">
+                    <img src="${p.imagen}" alt="${escaparHTML(p.nombre)}" loading="lazy" onerror="imagenFallback(this)">
+                    <span class="badge-cat ${p.categoria}">${esPerso ? "✨ " : ""}${nombreCategoria(p.categoria)}</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h3>${escaparHTML(p.nombre)}</h3>
+                    <p class="desc">${escaparHTML(p.descripcion)}</p>
+                    ${esPerso ? `
+                    <div class="campo-perso">
+                        <label for="perso-${p.id}">✏️ ¿Qué nombre o palabra quieres?</label>
+                        <input id="perso-${p.id}" type="text" maxlength="20" placeholder="Ej: VALENTINA, AMOR, LUZ" autocomplete="off">
+                    </div>` : ""}
+                    <div class="precio-fila">
+                        <span class="precio">${formatoCOP(p.precio)}</span>
+                        <div class="cantidad" aria-label="Cantidad">
+                            <button data-accion="cant-menos" aria-label="Menos">−</button>
+                            <output id="cant-${p.id}" aria-live="polite">1</output>
+                            <button data-accion="cant-mas" aria-label="Más">+</button>
+                        </div>
+                    </div>
+                    <div class="tarjeta-acciones">
+                        <button class="btn btn-morado" data-accion="agregar">🛍️ Agregar al pedido</button>
+                        <button class="btn-wa-mini" data-accion="wa-directo" aria-label="Pedir ${escaparHTML(p.nombre)} por WhatsApp">
+                            <svg aria-hidden="true"><use href="#i-wa"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </article>`;
+        }).join("");
+
+        observarRevelados();
+    }
+
+    /* Lee cantidad y personalización de una tarjeta. Devuelve null si falta el nombre. */
+    function leerTarjeta(tarjeta) {
+        const id = Number(tarjeta.dataset.id);
+        const p = buscarProducto(id);
+        const cantidad = Number(tarjeta.querySelector("output").textContent) || 1;
+        const input = tarjeta.querySelector(".campo-perso input");
+        let perso = "";
+        if (input) {
+            perso = input.value.trim();
+            if (!perso) {
+                input.classList.remove("error"); void input.offsetWidth; input.classList.add("error");
+                input.focus();
+                mostrarToast("✏️ Escribe el nombre o palabra para tu manilla");
+                return null;
+            }
+        }
+        return { p, cantidad, perso, input };
+    }
+
+    function manejarClickCatalogo(e) {
+        const boton = e.target.closest("button[data-accion]");
+        if (!boton) return;
+        const tarjeta = boton.closest(".tarjeta");
+        const out = tarjeta.querySelector("output");
+        const accion = boton.dataset.accion;
+
+        if (accion === "cant-mas") out.textContent = Math.min(99, Number(out.textContent) + 1);
+        if (accion === "cant-menos") out.textContent = Math.max(1, Number(out.textContent) - 1);
+
+        if (accion === "agregar") {
+            const datos = leerTarjeta(tarjeta);
+            if (!datos) return;
+            agregarAlCarrito(datos.p.id, datos.cantidad, datos.perso);
+            out.textContent = "1";
+            if (datos.input) datos.input.value = "";
+            mostrarToast(`💜 ${datos.cantidad} × ${datos.p.nombre} agregada`, true);
+        }
+
+        if (accion === "wa-directo") {
+            const datos = leerTarjeta(tarjeta);
+            if (!datos) return;
+            const linea = `• ${datos.p.nombre}${datos.perso ? ` — "${datos.perso.toUpperCase()}"` : ""} x${datos.cantidad} — ${formatoCOP(datos.p.precio * datos.cantidad)}`;
+            abrirWhatsApp(`Hola Vale 💜, me interesa esta manilla:\n\n${linea}\n\nQuisiera recibir información para realizar el pedido. ¡Gracias! 💜`);
+        }
+    }
+
+    /* =============================================================
+       WHATSAPP
+       ============================================================= */
+    function abrirWhatsApp(mensaje) {
+        const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, "_blank", "noopener");
+    }
+
+    function mensajePedido() {
+        const lineas = carrito.map((l) => {
+            const p = buscarProducto(l.id);
+            const perso = l.personalizacion ? ` — "${l.personalizacion}"` : "";
+            return `• ${p.nombre}${perso} x${l.cantidad} — ${formatoCOP(p.precio * l.cantidad)}`;
+        }).join("\n");
+
+        const nombre = $("#dNombre").value.trim();
+        const ciudad = $("#dCiudad").value.trim();
+        const comentario = $("#dComentario").value.trim();
+
+        let datos = "";
+        if (nombre || ciudad || comentario) {
+            datos = "\n\n📝 Mis datos:";
+            if (nombre) datos += `\nNombre: ${nombre}`;
+            if (ciudad) datos += `\nCiudad: ${ciudad}`;
+            if (comentario) datos += `\nComentario: ${comentario}`;
+        }
+
+        return `Hola Vale 💜, quiero hacer el siguiente pedido:\n\n🛍️ Mi pedido:\n\n${lineas}\n\n💰 Total: ${formatoCOP(totalPrecio())}${datos}\n\nQuisiera recibir información para realizar el pedido. ¡Gracias! 💜`;
+    }
+
+    function enviarPedido() {
+        if (!carrito.length) { mostrarToast("Tu pedido está vacío 🦋"); return; }
+        guardarDatos();
+        abrirWhatsApp(mensajePedido());
+    }
+
+    // Si hay productos en el carrito, los botones generales envían el pedido;
+    // si no, abren un saludo.
+    function manejarWAGeneral(e) {
+        e.preventDefault();
+        if (carrito.length) enviarPedido();
+        else abrirWhatsApp("Hola Vale 💜, quiero hacer un pedido de manillas ✨");
+    }
+
+    /* =============================================================
+       PERSONALIZACIÓN (sección "Hazla única")
+       ============================================================= */
+    const COLORES_PEPITAS = ["#8a5cc9", "#f06ba8", "#3fb6a8", "#f5a623", "#5b8def", "#e0559a"];
+
+    function palabraEnPepitas(palabra, color) {
+        const letras = [...palabra.toUpperCase()].map((ch) =>
+            ch === " " ? `<b class="esp"></b>` : `<b>${escaparHTML(ch)}</b>`).join("");
+        return `<span class="ejemplo" style="--c:${color}" aria-label="${escaparHTML(palabra)}">${letras}</span>`;
+    }
+
+    function renderEjemplos() {
+        const palabras = ["AMOR", "LUZ", "SUEÑA", "VALENTINA", "MAMÁ", "MEJOR AMIGA"];
+        $("#ejemplos").innerHTML = palabras.map((w, i) => palabraEnPepitas(w, COLORES_PEPITAS[i % COLORES_PEPITAS.length])).join("");
+    }
+
+    function actualizarProbador() {
+        const val = $("#probador").value.trim();
+        $("#vistaPrevia").innerHTML = val ? palabraEnPepitas(val, "#f06ba8") : "";
+    }
+
+    function pedirPersonalizada(e) {
+        e.preventDefault();
+        const val = $("#probador").value.trim();
+        const extra = val ? ` con la palabra "${val.toUpperCase()}"` : "";
+        abrirWhatsApp(`Hola Vale 💜, quiero una manilla personalizada${extra} ✨ ¿Me das más información?`);
+    }
+
+    /* =============================================================
+       MENU MOBILE
+       ============================================================= */
+    function alternarMenu() {
+        const abierto = $("#menuMovil").classList.toggle("abierto");
+        $("#hamburguesa").setAttribute("aria-expanded", abierto);
+        $("#hamburguesa").setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+    }
+    function cerrarMenu() {
+        $("#menuMovil").classList.remove("abierto");
+        $("#hamburguesa").setAttribute("aria-expanded", "false");
+        $("#hamburguesa").setAttribute("aria-label", "Abrir menú");
+    }
+
+    /* Resalta el enlace del menú según la sección visible */
+    function activarMenuScroll() {
+        if (!("IntersectionObserver" in window)) return;
+        const enlaces = document.querySelectorAll(".nav a");
+        const obs = new IntersectionObserver((entradas) => {
+            entradas.forEach((en) => {
+                if (en.isIntersecting) {
+                    enlaces.forEach((a) => a.classList.toggle("activo", a.getAttribute("href") === "#" + en.target.id));
+                }
+            });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        ["inicio", "catalogo", "personalizadas", "como-pedir", "contacto"].forEach((id) => {
+            const s = document.getElementById(id); if (s) obs.observe(s);
+        });
+    }
+
+    /* =============================================================
+       ANIMACIONES (aparición al hacer scroll)
+       ============================================================= */
+    let observador = null;
+    function observarRevelados() {
+        const elementos = document.querySelectorAll(".revelar:not(.visible)");
+        if (!("IntersectionObserver" in window)) { elementos.forEach((el) => el.classList.add("visible")); return; }
+        if (!observador) {
+            observador = new IntersectionObserver((entradas) => {
+                entradas.forEach((en) => {
+                    if (en.isIntersecting) { en.target.classList.add("visible"); observador.unobserve(en.target); }
+                });
+            }, { threshold: 0.12 });
+        }
+        elementos.forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + "ms"; observador.observe(el); });
+    }
+
+    /* Toast (mensajito inferior) */
+    let toastTimer;
+    function mostrarToast(texto, conBoton = false) {
+        const t = $("#toast");
+        t.innerHTML = `<span>${escaparHTML(texto)}</span>${conBoton ? `<button data-accion="ver-pedido">Ver pedido</button>` : ""}`;
+        t.classList.add("visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.classList.remove("visible"), 3200);
+    }
+
+    /* =============================================================
+       LOCALSTORAGE (el pedido se conserva al recargar)
+       ============================================================= */
+    function guardarCarrito() {
+        try { localStorage.setItem(CONFIG.claveStorage, JSON.stringify(carrito)); } catch (e) { /* sin almacenamiento: no pasa nada */ }
+    }
+    function cargarCarrito() {
+        try {
+            const data = JSON.parse(localStorage.getItem(CONFIG.claveStorage) || "[]");
+            if (Array.isArray(data)) carrito = data.filter((l) => l && typeof l.id === "number" && l.cantidad > 0);
+        } catch (e) { carrito = []; }
+    }
+    function guardarDatos() {
+        try {
+            localStorage.setItem(CONFIG.claveStorage + "-datos", JSON.stringify({ nombre: $("#dNombre").value, ciudad: $("#dCiudad").value }));
+        } catch (e) {}
+    }
+    function cargarDatos() {
+        try {
+            const d = JSON.parse(localStorage.getItem(CONFIG.claveStorage + "-datos") || "{}");
+            if (d.nombre) $("#dNombre").value = d.nombre;
+            if (d.ciudad) $("#dCiudad").value = d.ciudad;
+        } catch (e) {}
+    }
+
+    /* =============================================================
+       INICIO
+       ============================================================= */
+    document.addEventListener("DOMContentLoaded", () => {
+        $("#anio").textContent = new Date().getFullYear();
+
+        cargarCarrito();
+        cargarDatos();
+        renderFiltros();
+        renderProductos();
+        renderCarrito();
+        renderEjemplos();
+        observarRevelados();
+        activarMenuScroll();
+
+        // Filtros
+        $("#filtros").addEventListener("click", (e) => {
+            const b = e.target.closest("[data-filtro]");
+            if (!b) return;
+            filtroActual = b.dataset.filtro;
+            renderFiltros();
+            renderProductos();
+        });
+
+        // Catálogo
+        $("#gridProductos").addEventListener("click", manejarClickCatalogo);
+        // Enter en el campo de personalización = agregar
+        $("#gridProductos").addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && e.target.matches(".campo-perso input")) {
+                e.preventDefault();
+                e.target.closest(".tarjeta").querySelector('[data-accion="agregar"]').click();
+            }
+        });
+
+        // Carrito
+        $("#abrirCarrito").addEventListener("click", abrirCarrito);
+        $("#cerrarCarrito").addEventListener("click", cerrarCarrito);
+        $("#overlay").addEventListener("click", cerrarCarrito);
+        $("#enviarPedido").addEventListener("click", enviarPedido);
+        $("#vaciarCarrito").addEventListener("click", vaciarCarrito);
+        $("#listaCarrito").addEventListener("click", (e) => {
+            const b = e.target.closest("[data-accion]");
+            if (!b) return;
+            const { accion, clave } = b.dataset;
+            if (accion === "mas") cambiarCantidad(clave, 1);
+            if (accion === "menos") cambiarCantidad(clave, -1);
+            if (accion === "eliminar") eliminarLinea(clave);
+            if (accion === "ir-catalogo") { cerrarCarrito(); location.hash = "#catalogo"; }
+        });
+        $("#toast").addEventListener("click", (e) => {
+            if (e.target.closest('[data-accion="ver-pedido"]')) { $("#toast").classList.remove("visible"); abrirCarrito(); }
+        });
+
+        // WhatsApp general (header, hero, contacto, flotante)
+        document.querySelectorAll(".js-wa-general").forEach((a) => a.addEventListener("click", manejarWAGeneral));
+        $("#btnPedirPasos").addEventListener("click", manejarWAGeneral);
+
+        // Personalización
+        $("#probador").addEventListener("input", actualizarProbador);
+        $("#btnPersonalizar").addEventListener("click", pedirPersonalizada);
+
+        // Menú móvil
+        $("#hamburguesa").addEventListener("click", alternarMenu);
+        document.querySelectorAll("#menuMovil a[href^='#']").forEach((a) => a.addEventListener("click", cerrarMenu));
+
+        // Tecla Escape cierra carrito y menú
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                if ($("#carrito").classList.contains("abierto")) cerrarCarrito();
+                cerrarMenu();
+            }
+        });
+
+        // Sincroniza el carrito si se abre la página en otra pestaña
+        window.addEventListener("storage", (e) => {
+            if (e.key === CONFIG.claveStorage) { cargarCarrito(); renderCarrito(); }
+        });
+    });
+    </script>
+
+</body>
+</html>
